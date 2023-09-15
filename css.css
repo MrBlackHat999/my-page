@@ -1,0 +1,33 @@
+html{
+  background-color:DimGray;
+  text-align: center;
+}
+header{
+background-color: #feefae;
+}
+@font-face {
+    font-family: circulamedium;
+    src: url("circula-medium.otf") format("opentype");
+}
+
+@font-face {
+    font-family: GraublauWeb;
+    font-weight: bold;
+    src: url("path/GraublauWebBold.otf") format("opentype");
+}
+header{
+color: Dimgray;
+font-family: circulamedium;
+font-weight: 3px;
+font-size: 80;
+}
+aside{
+font-size: 20;
+float: right;
+width: 100;
+}
+article{
+color: #feefae;
+text-align: left;
+
+}
