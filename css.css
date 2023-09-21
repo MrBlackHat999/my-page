@@ -1,6 +1,8 @@
 html{
   background-color:DimGray;
   text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: medium;
 }
 header{
 background-color: #feefae;
