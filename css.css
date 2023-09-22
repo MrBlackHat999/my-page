@@ -33,3 +33,15 @@ color: #feefae;
 text-align: left;
 
 }
+footer{
+color: #feefae;	
+	
+	
+}
+
+#bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #feefae;
+}
