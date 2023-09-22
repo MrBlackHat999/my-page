@@ -6,6 +6,7 @@ html{
 }
 header{
 background-color: #feefae;
+border-radius: 15px 15px 0px 0px;
 }
 @font-face {
     font-family: circulamedium;
@@ -44,4 +45,29 @@ color: #feefae;
   bottom: 0;
   left: 0;
   color: #feefae;
+}
+
+.topnav {
+  background-color: #333;
+  border-radius: 0px 0px 15px 15px;
+  overflow: hidden;
+}
+.topnav a {
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  float: left;
+  background-color: #009292;
+  border-radius: 0px 10px 10px 10px;
+  color: white;
 }
