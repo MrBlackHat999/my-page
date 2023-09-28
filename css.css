@@ -1,12 +1,12 @@
 html{
-  background-color:DimGray;
-  text-align: center;
-  font-family: 'Roboto', sans-serif;
-  font-weight: medium;
+	background-color:DimGray;
+	font-family: 'Roboto', sans-serif;
+  
 }
 header{
-background-color: #feefae;
-border-radius: 15px 15px 0px 0px;
+	text-align: center;
+	background-color: #feefae;
+	border-radius: 15px 15px 0px 0px;
 }
 @font-face {
     font-family: circulamedium;
@@ -19,49 +19,51 @@ border-radius: 15px 15px 0px 0px;
     src: url("path/GraublauWebBold.otf") format("opentype");
 }
 header{
-color: Dimgray;
-font-family: circulamedium;
-font-weight: 3px;
-font-size: 80;
+	color: Dimgray;
+	font-family: circulamedium;
+	font-weight: 3px;
+	font-size: 80;
 }
-aside{
-display: grid;
-font-size: 20;
-float: right;
-width: 100;
-grid-area: sidebar;
-border-radius: 25px;
-}
+
 article{
-color: #feefae;
-text-align: left;
+	color: #feefae;
+	text-align: left;
+	grid-area: main;
 
 }
+.funnyad{
+	grid-area: sidebar;
+	font-size: 20;
+	float: right;
+	width: 100;
+	border-radius: 25px;	
+	
+}
 footer{
-color: #feefae;	
+	color: #feefae;	
 	
 	
 }
 
 #bottom {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  color: #feefae;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	color: #feefae;
 }
 
 .topnav {
-  background-color: #333;
-  border-radius: 0px 0px 15px 15px;
-  overflow: hidden;
+	background-color: #333;
+	border-radius: 0px 0px 15px 15px;
+	overflow: hidden;
 }
 .topnav a {
-  color: #feefae;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-  float: right;
+	color: #feefae;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+	float: right;
 }
 
 .topnav a:hover {
