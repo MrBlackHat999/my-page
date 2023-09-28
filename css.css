@@ -25,9 +25,12 @@ font-weight: 3px;
 font-size: 80;
 }
 aside{
+display: grid;
 font-size: 20;
 float: right;
 width: 100;
+grid-area: sidebar;
+border-radius: 25px;
 }
 article{
 color: #feefae;
@@ -71,4 +74,7 @@ color: #feefae;
   background-color: #009292;
   border-radius: 0px 10px 10px 10px;
   color: white;
+}
+.item-d {
+
 }
