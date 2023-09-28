@@ -1,13 +1,22 @@
 html{
-	background-color:DimGray;
-	font-family: 'Roboto', sans-serif;
-  
+background-color:DimGray;
+font-family: 'Roboto', sans-serif; 
 }
 header{
 	text-align: center;
 	background-color: #feefae;
 	border-radius: 15px 15px 0px 0px;
+    -webkit-animation: smooth 2.5s ease-in;
+    -moz-animation: smooth 2.5s ease-in;
+    -o-animation: smooth 2.5s ease-in;
+    -ms-animation: smooth 2.5s ease-in;
+    animation: smooth 2.5s ease-in;
+	color: Dimgray;
+	font-family: circulamedium;
+	font-weight: 3px;
+	font-size: 80;
 }
+
 @font-face {
     font-family: circulamedium;
     src: url("circula-medium.otf") format("opentype");
@@ -18,26 +27,32 @@ header{
     font-weight: bold;
     src: url("path/GraublauWebBold.otf") format("opentype");
 }
-header{
-	color: Dimgray;
-	font-family: circulamedium;
-	font-weight: 3px;
-	font-size: 80;
-}
-
 article{
 	color: #feefae;
 	text-align: left;
-	grid-area: main;
-
+	display: grid;
+	grid-template-columns: repeat(8, 1fr);
+	gap: 10px;
+	grid-auto-rows: 100px;
+	grid-template-areas:
+    "a a a a b b b b"
+    "a a a a b b b b"
+    "c c c c d d d d"
+    "c c c c d d d d"
 }
-.funnyad{
-	grid-area: sidebar;
-	font-size: 20;
-	float: right;
-	width: 100;
-	border-radius: 25px;	
-	
+#s1{
+  /*border: solid 1px;
+    border-radius:2px;*/
+    grid-column:1/10;
+	grid-area: a;
+	justify-self: stretch
+}
+#s2{
+  /*border: solid 1px;
+    border-radius:15px;*/
+    grid-column:10/11;
+	grid-area: b/last-line ;
+	align-self: end;
 }
 footer{
 	color: #feefae;	
@@ -56,6 +71,11 @@ footer{
 	background-color: #333;
 	border-radius: 0px 0px 15px 15px;
 	overflow: hidden;
+	-webkit-animation: smooth 3s ease-in;
+    -moz-animation: smooth 3s ease-in;
+    -o-animation: smooth 3s ease-in;
+    -ms-animation: smooth 3s ease-in;
+    animation: smooth 3s ease-in;
 }
 .topnav a {
 	color: #feefae;
@@ -67,8 +87,8 @@ footer{
 }
 
 .topnav a:hover {
-  background-color: #009292;
-  color: white;
+	background-color: #009292;
+	color: white;
 }
 
 .topnav a.active {
@@ -77,6 +97,22 @@ footer{
   border-radius: 0px 10px 10px 10px;
   color: white;
 }
-.item-d {
+@-webkit-keyframes smooth {
+    0% { opacity: 0;}
+    100% { opacity: 1;}
+}
 
+@-moz-keyframes smooth {
+    0% { opacity: 0;}
+    100% { opacity: 1;}
+}
+
+@-o-keyframes smooth {
+    0% { opacity: 0;}
+    100% { opacity: 1;}
+}
+
+@keyframes smooth {
+    0% { opacity: 0;}
+    100% { opacity: 1;}
 }
