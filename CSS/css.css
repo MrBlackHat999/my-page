@@ -2,6 +2,7 @@ html{
 background-color:DimGray;
 font-family: 'Roboto', sans-serif; 
 }
+/*----------------------------------------------------*/
 header{
 	text-align: center;
 	background-color: #feefae;
@@ -17,6 +18,26 @@ header{
 	font-size: 80;
 }
 
+@-webkit-keyframes smooth {
+    0% { opacity: 0;}
+    100% { opacity: 1;}
+}
+
+@-moz-keyframes smooth {
+    0% { opacity: 0;}
+    100% { opacity: 1;}
+}
+
+@-o-keyframes smooth {
+    0% { opacity: 0;}
+    100% { opacity: 1;}
+}
+
+@keyframes smooth {
+    0% { opacity: 0;}
+    100% { opacity: 1;}
+}
+/*------------------------------------------------------*/
 @font-face {
     font-family: circulamedium;
     src: url("circula-medium.otf") format("opentype");
@@ -97,25 +118,7 @@ footer{
   border-radius: 0px 10px 10px 10px;
   color: white;
 }
-@-webkit-keyframes smooth {
-    0% { opacity: 0;}
-    100% { opacity: 1;}
-}
 
-@-moz-keyframes smooth {
-    0% { opacity: 0;}
-    100% { opacity: 1;}
-}
-
-@-o-keyframes smooth {
-    0% { opacity: 0;}
-    100% { opacity: 1;}
-}
-
-@keyframes smooth {
-    0% { opacity: 0;}
-    100% { opacity: 1;}
-}
 
 #spec table {
   border-collapse: collapse;
@@ -135,8 +138,7 @@ footer{
   padding-top: 10px;
   padding-bottom: 10px;
 }
-#spec th, td {
-}
+
 #spec td{
   color: #feefae;
   padding: 5px;
@@ -157,11 +159,36 @@ footer{
 #spec tr:last-child td:last-child {
   border-bottom-right-radius: 10px;
 }
-/*#spec {
-    position: absolute;
-    right: -100px;
-    width: 100px;
-    height: 100px;
-    background: blue;
-    transition: 1s;
+
+.box {
+  height: 80px;
+  width: 120px;
+  overflow: hidden;
+  background: #feefae;
+  border: 4px;
+  border-radius: 15px;
+  color: DimGray;
+  font-size: 30;
 }
+.hid-box {
+  top: 100%;
+  position: relative;
+  transition: all .6s ease-out;
+  background: #333;
+  height: 100%;
+  border-radius: 15px;
+  text-align: center;
+  padding: 20px;
+  font-family: circulamedium;
+  font-size: 30;
+}
+.box:hover {
+  animation: smooth 3s ease-out;
+}
+.box:hover > .hid-box{
+  top: 0;
+}
+.hid-box a:link { text-decoration: none; }
+.hid-box a:visited { text-decoration: none; }
+.hid-box a:hover { text-decoration: none; }
+.hid-box a:active { text-decoration: none; }
