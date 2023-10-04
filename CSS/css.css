@@ -183,7 +183,7 @@ footer{
   font-size: 30;
 }
 .box:hover {
-  animation: smooth 3s ease-out;
+  animation: smooth 2.5s ease-out;
 }
 .box:hover > .hid-box{
   top: 0;
@@ -192,3 +192,18 @@ footer{
 .hid-box a:visited { text-decoration: none; }
 .hid-box a:hover { text-decoration: none; }
 .hid-box a:active { text-decoration: none; }
+
+#contact{
+	float:center;
+	text-align: center;
+	vertical-align: middle;
+}
+.middle {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.spacing {
+	margin-top: 40px;
+}
