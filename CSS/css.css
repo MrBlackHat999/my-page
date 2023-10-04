@@ -225,10 +225,16 @@ footer{
 	text-align: center;
 	vertical-align: middle;
 }
-.middle {
+.middletable {
   position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+.middlecontact{
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 15%;
 }
 .spacing {
 	margin-top: 40px;
