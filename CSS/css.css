@@ -161,19 +161,30 @@ footer{
 }
 
 @keyframes slideup {
-    0% { margin-top: 90%;}
-    100% { margin-top: 45%;}
+    0% 
+	{	
+		opacity: 0;
+		margin-top: 90%;
+	}
+    100% 
+	{
+		opacity: 1;
+		margin-top: 45%;
+	}
 }
 @-webkit-keyframes slideup {
-    from { opacity: 0;}
-    to { opacity: 0;}
+    0% { margin-top: 90%;}
+    100% { margin-top: 45%;}
 }
 .slideuptable{
 	animation-name: slideup;
 	animation-fill-mode: forwards;
 	animation-delay: 0.5s;
 	animation-duration: 1.5s;
-	-webkit-animation: slideup 1.5s ease-out;
+	-webkit-animation-name: slideup;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-delay: 0.5s;
+	-webkit-animation-duration: 1.5s;
 }
 
 .box {
