@@ -160,6 +160,22 @@ footer{
   border-bottom-right-radius: 10px;
 }
 
+@keyframes slideup {
+    0% { margin-top: 90%;}
+    100% { margin-top: 45%;}
+}
+@-webkit-keyframes slideup {
+    from { opacity: 0;}
+    to { opacity: 0;}
+}
+.slideuptable{
+	animation-name: slideup;
+	animation-fill-mode: forwards;
+	animation-delay: 0.5s;
+	animation-duration: 1.5s;
+	-webkit-animation: slideup 1.5s ease-out;
+}
+
 .box {
   height: 80px;
   width: 120px;
@@ -200,7 +216,6 @@ footer{
 }
 .middle {
   position: absolute;
-  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
