@@ -1,0 +1,167 @@
+html{
+background-color:DimGray;
+font-family: 'Roboto', sans-serif; 
+}
+header{
+	text-align: center;
+	background-color: #feefae;
+	border-radius: 15px 15px 0px 0px;
+    -webkit-animation: smooth 1.5s ease-in;
+    -moz-animation: smooth 1.5s ease-in;
+    -o-animation: smooth 1.5s ease-in;
+    -ms-animation: smooth 1.5s ease-in;
+    animation: smooth 1.5s ease-in;
+	color: Dimgray;
+	font-family: circulamedium;
+	font-weight: 3px;
+	font-size: 80;
+}
+
+@font-face {
+    font-family: circulamedium;
+    src: url("circula-medium.otf") format("opentype");
+}
+
+@font-face {
+    font-family: GraublauWeb;
+    font-weight: bold;
+    src: url("path/GraublauWebBold.otf") format("opentype");
+}
+article{
+	color: #feefae;
+	text-align: left;
+	display: grid;
+	grid-template-columns: repeat(8, 1fr);
+	gap: 10px;
+	grid-auto-rows: 100px;
+	grid-template-areas:
+    "a a a a b b b b"
+    "a a a a b b b b"
+    "c c c c d d d d"
+    "c c c c d d d d"
+}
+#s1{
+  /*border: solid 1px;
+    border-radius:2px;*/
+    grid-column:1/10;
+	grid-area: a;
+	justify-self: stretch
+}
+#s2{
+  /*border: solid 1px;
+    border-radius:15px;*/
+    grid-column:10/11;
+	grid-area: b/last-line ;
+	align-self: end;
+}
+footer{
+	color: #feefae;	
+	
+	
+}
+
+#bottom {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	color: #feefae;
+}
+
+.topnav {
+	background-color: #333;
+	border-radius: 0px 0px 15px 15px;
+	overflow: hidden;
+	-webkit-animation: smooth 3s ease-in;
+    -moz-animation: smooth 3s ease-in;
+    -o-animation: smooth 3s ease-in;
+    -ms-animation: smooth 3s ease-in;
+    animation: smooth 3s ease-in;
+}
+.topnav a {
+	color: #feefae;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+	float: right;
+}
+
+.topnav a:hover {
+	background-color: #009292;
+	color: white;
+}
+
+.topnav a.active {
+  float: left;
+  background-color: #009292;
+  border-radius: 0px 10px 10px 10px;
+  color: white;
+}
+@-webkit-keyframes smooth {
+    0% { opacity: 0;}
+    100% { opacity: 1;}
+}
+
+@-moz-keyframes smooth {
+    0% { opacity: 0;}
+    100% { opacity: 1;}
+}
+
+@-o-keyframes smooth {
+    0% { opacity: 0;}
+    100% { opacity: 1;}
+}
+
+@keyframes smooth {
+    0% { opacity: 0;}
+    100% { opacity: 1;}
+}
+
+#spec table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  overflow: hidden;
+  transition: all .5s ease-in-out;
+  vertical-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+#spec th {
+  background-color: #feefae;
+  color: Dimgray;
+  border: 4px solid #feefae;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+#spec th, td {
+}
+#spec td{
+  color: #feefae;
+  padding: 5px;
+}
+#spec tr:nth-child(even) {
+  background-color: Gray;
+}
+/* required css to make rounded table (below) */
+#spec tr:first-child th:first-child {
+  border-top-left-radius: 10px;
+}
+#spec tr:first-child th:last-child {
+  border-top-right-radius: 10px;
+}
+#spec tr:last-child td:first-child {
+  border-bottom-left-radius: 10px;
+}
+#spec tr:last-child td:last-child {
+  border-bottom-right-radius: 10px;
+}
+/*#spec {
+    position: absolute;
+    right: -100px;
+    width: 100px;
+    height: 100px;
+    background: blue;
+    transition: 1s;
+}
