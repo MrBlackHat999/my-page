@@ -250,7 +250,7 @@ footer{
 /*Interest table*/
 /*------------------------------------------------------*/
 
-.IT:hover ..imagelocation{
+.IT:hover .imageup{
 	animation-name: slideup;
 	animation-fill-mode: forwards;
 	animation-duration: 1.5s;
