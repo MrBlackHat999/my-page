@@ -247,9 +247,17 @@ footer{
 	margin-top: 40px;
 }
 
-/* Interest table*/
+/*Interest table*/
 /*------------------------------------------------------*/
 
+.IT:hover ..imagelocation{
+	animation-name: slideup;
+	animation-fill-mode: forwards;
+	animation-duration: 1.5s;
+	-webkit-animation-name: slideup;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-duration: 1.5s;
+}
 
 .imagelocation {
   position: absolute;
@@ -257,10 +265,6 @@ footer{
   transform: translate(-50%, -50%);
   max-width: 10%;
   max-height: 10%;
-  animation-fill-mode: forwards;
-  animation-duration: 1.5s;
-  -webkit-animation-fill-mode: forwards;
-  -webkit-animation-duration: 1.5s;
 }
 
 
