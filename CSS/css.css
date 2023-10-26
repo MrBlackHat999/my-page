@@ -324,15 +324,60 @@ footer{
   max-height: 25%;
   border-radius: 5%;
 }
+/*^^^^^^^^^^^^              IT              ^^^^^^^^^^^^*/     
 
+.hardware{
+  height: 17px;
+  width: 80px;
+}
+.hardwareimage{
+  opacity: 0;
+}
 
+.hardware:hover .hardwareimage{
+  animation-name: slideup;
+	animation-fill-mode: both;
+	animation-duration: 3s;
+	-webkit-animation-name: slideup;
+	-webkit-animation-fill-mode: both;
+	-webkit-animation-duration: 3s;
+}
 
+.imghardware{
+  position: absolute;
+  right: 40%;
+  max-width: 25%;
+  max-height: 25%;
+  border-radius: 5%;
+}
+/*^^^^^^^^^^^^           hardware           ^^^^^^^^^^^^*/
 
+.PCparts{
+  height: 17px;
+  width: 80px;
+  background-color: #feefae;  
+}
 
+.PCpartsimage{
+  opacity: 0;
+}
 
+.PCparts:hover .PCpartsimage{
+  animation-name: slideup;
+	animation-fill-mode: both;
+	animation-duration: 3s;
+	-webkit-animation-name: slideup;
+	-webkit-animation-fill-mode: both;
+	-webkit-animation-duration: 3s;  
+}
 
-
-
+.imgPCparts{
+  position: absolute;
+  right: 40%;
+  max-width: 25%;
+  max-height: 25%;
+  border-radius: 5%; 
+}
 /*------------------------------------------------------*/
 
 
