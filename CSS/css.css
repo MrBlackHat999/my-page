@@ -301,24 +301,28 @@ footer{
 /*Interest table*/
 /*------------------------------------------------------*/
 .IT{
-  height: 15px;
-  width: 20px;
-  background: #feefae;
+  height: 17px;
+  width: 30px;
+  
+}
+.imageup{
+  opacity: 0;
 }
 .IT:hover  .imageup{
 	animation-name: slideup;
-	animation-fill-mode: forwards;
-	animation-duration: 4s;
+	animation-fill-mode: both;
+	animation-duration: 3s;
 	-webkit-animation-name: slideup;
-	-webkit-animation-fill-mode: forwards;
-	-webkit-animation-duration: 4s;
+	-webkit-animation-fill-mode: both;
+	-webkit-animation-duration: 3s;
 }
 
 .imagelocation {
   position: absolute;
   right: 40%;
-  max-width: 15%;
-  max-height: 15%;
+  max-width: 25%;
+  max-height: 25%;
+  border-radius: 5%;
 }
 
 
