@@ -381,8 +381,7 @@ footer{
 
 .VRandAR{
   height: 17px;
-  width: 80px;
-  background-color: #feefae;   
+  width: 80px;  
 }
 
 .VRandARimage{
@@ -405,6 +404,37 @@ footer{
   max-height: 25%;
   border-radius: 5%; 
 }
+/*^^^^^^^^^^^^            VRandAR           ^^^^^^^^^^^^*/
+
+.quest3{
+  height: 17px;
+  width: 80px;
+  background-color: #feefae;
+}
+
+.quest3image{
+  opacity: 0;
+}
+
+.quest3:hover .quest3image{
+  animation-name: slideup;
+	animation-fill-mode: both;
+	animation-duration: 3s;
+	-webkit-animation-name: slideup;
+	-webkit-animation-fill-mode: both;
+	-webkit-animation-duration: 3s;  
+}
+
+.imgquest3{
+  position: absolute;
+  right: 35%;
+  max-width: 25%;
+  max-height: 25%;
+  border-radius: 5%;
+}
+/*^^^^^^^^^^^^             quest3           ^^^^^^^^^^^^*/
+
+
 /*------------------------------------------------------*/
 
 
