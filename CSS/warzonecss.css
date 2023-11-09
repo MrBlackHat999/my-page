@@ -1,0 +1,28 @@
+html{
+    background-color:darkcyan;
+}
+#id kolumna{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+@keyframes dorit {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+  }
+.doritos {
+    max-width: 10%;
+    max-height: 10%;
+    border-radius: 5%;
+    animation-name: dorit;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+marquee{
+    width: 100%;
+}
+body {
+    width: 100%;
+}

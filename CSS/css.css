@@ -176,24 +176,24 @@ footer{
     0% 
 	{	
 		opacity: 0;
-		margin-top: 90%;
+		margin-top: 80%;
 	}
     100% 
 	{
 		opacity: 1;
-		margin-top: 45%;
+		margin-top: 35%;
 	}
 }
 @-webkit-keyframes table  {
     0% 
 	{	
 		opacity: 0;
-		margin-top: 90%;
+		margin-top: 80%;
 	}
     100% 
 	{
 		opacity: 1;
-		margin-top: 45%;
+		margin-top: 35%;
 	}
 }
 
@@ -201,24 +201,24 @@ footer{
     0% 
 	{	
 		opacity: 0;
-		margin-top: 400px;
+		margin-top: 90%;
 	}
     100% 
 	{
 		opacity: 1;
-		margin-top: 300px;
+		margin-top: 50%;
 	}
 }
 @-webkit-keyframes slideup  {
     0% 
 	{	
 		opacity: 0;
-		margin-top: 400px;
+		margin-top: 90%;
 	}
     100% 
 	{
 		opacity: 1;
-		margin-top: 300px;
+		margin-top: 50%;
 	}
 }
 .slideuptable{
