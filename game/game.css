@@ -1,0 +1,60 @@
+body {
+    background-color: dimgray;
+    font-family: 'Roboto', sans-serif;
+}
+.grid-container {
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    justify-content: space-between;
+    align-items: center;
+}
+.item1{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    width: 250px;
+}
+.item2{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+.item3{
+
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    width: 250px;
+}
+.giveup{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    width: 250px;
+}
+.giveup{
+    display: block;
+    border: none;
+    background-color: #feefae;
+    color: dimgray;
+    padding: 14px 28px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 15px;
+    font-weight: bolder;
+}
+
+#enemy{
+    width: 100%;
+    height: auto;
+}
+#player{
+    width: 100%;
+    height: auto;
+}

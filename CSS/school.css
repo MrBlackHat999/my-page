@@ -1,0 +1,44 @@
+html{
+    background-color:DimGray;
+    font-family: 'Roboto', sans-serif; 
+} 
+#Anna:hover{
+    font-family: 'Western', sans-serif;
+    font-size: xx-large;
+
+}
+@keyframes yeet {
+    0%
+    {
+        margin-left: 0;
+    }
+    100%
+    {
+        margin-left: 200%;
+    }   
+}
+#Grab:hover{
+    animation-name: yeet;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+@keyframes big {
+    0%
+    {
+        font-size: medium;
+    }
+    100%
+    {
+        font-size: 100000%;
+    }
+}
+.Gex{
+    height: 1000px;
+    width: 80px;
+    background-color: aliceblue; 
+}
+.Gex:hover #Say{
+    animation-name: big;
+    animation-duration: 20s;
+    animation-fill-mode: forwards;
+}

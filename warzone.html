@@ -6,7 +6,8 @@
     <link rel="stylesheet" href="CSS/warzonecss.css" type="text/css">
   </head>  
   <body>
-    <a href="index.html">Please take me back</a>
+    <a href="index.html">Please take me back</a><br>
+    <a href="school.html">Go deeper</a>
     <table>
       <caption>próbna tablela</caption>
       <tr id="kolumna"><td colspan="4">hihiha</td></tr>
@@ -14,16 +15,16 @@
     </table>
     <form>
       <table>
-        <tr><th>Imię</th><th><input class="inputs" name="imie" type="text"></th><th rowspan="5">Zdjęcie dziecka</th></tr>
-        <tr><th>Nazwisko</th><th><input class="inputs" name="Nazwisko" type="text"></th></tr>
-        <tr><th>Data Urodzenia</th><th><input class="inputs" name="DataUrodzenia" type="text"></th></tr>
+        <tr><th>Imię</th><th><input class="inputs" name="imie" type="text" placeholder="Jan"></th><th rowspan="5">Zdjęcie dziecka</th></tr>
+        <tr><th>Nazwisko</th><th><input class="inputs" name="Nazwisko" type="text" placeholder="Kowalski"></th></tr>
+        <tr><th>Data Urodzenia</th><th><input class="inputs" name="DataUrodzenia" type="date"></th></tr>
         <tr><th>Miesiąc Urodzenia</th><th><input class="inputs" name="MiecUrodzenia" type="text"></th></tr>
-        <tr><th>PESEL</th><th><input class="inputs" name="PESEL" type="text"></th></tr>
-        <tr><th>Adres Zamieszkania</th><th colspan="2"><input class="inputs" name="AdresZamieszkania" type="text"></th></tr>
-        <tr><th>Adres Zamelodowania</th><th colspan="2"><input class="inputs" name="AdresZameldowania" type="text"></th></tr>
-        <tr><th>Szkoła rejonowa</th><th colspan="2"><input class="inputs" name="SzkołaRejonowa" type="text"></th></tr>
-        <tr><th>zgłoszenie do kasy</th><td colspan="2"><input class="inputs" name="ZgloszenieDoKasy" type="checkbox" value="0">0</label><input class="inputs" name="ZgloszenieDoKasy" type="checkbox" value="1">1</label><input class="inputs" name="ZgloszenieDoKasy" type="checkbox" value="2">2</label><input class="inputs" name="ZgloszenieDoKasy" type="checkbox" value="3">3</label><input class="inputs" name="ZgloszenieDoKasy" type="checkbox" value="4">4</label><input class="inputs" name="ZgloszenieDoKasy" type="checkbox" value="5">5</label><input class="inputs" name="ZgloszenieDoKasy" type="checkbox" value="6">6</label></td></tr>
-        <tr><th>Czy dziecko powtarzało klasę? Jeśli takto którą?</th><th colspan="2"><input class="inputs" name="AdresZamieszkania" type="text"></th></tr>
+        <tr><th>PESEL</th><th><input class="inputs" name="PESEL" type="number" pattern="[0-9]{11}" placeholder="99999999999"></th></tr>
+        <tr><th>Adres Zamieszkania</th><th colspan="2"><input class="inputs" name="AdresZamieszkania" type="text" placeholder="Bolszewicka 12"></th></tr>
+        <tr><th>Adres Zamelodowania</th><th colspan="2"><input class="inputs" name="AdresZameldowania" placeholder="rupinska 2" type="text"></th></tr>
+        <tr><th>Szkoła rejonowa</th><th colspan="2"><input class="inputs" name="SzkołaRejonowa" type="text" placeholder="technikum/szkoła Policealna/Liceum"></th></tr>
+        <tr><th>zgłoszenie do kasy</th><td colspan="2"><input class="inputs" name="ZgloszenieDoKasy" type="checkbox" value="1">1</label><input class="inputs" name="ZgloszenieDoKasy" type="checkbox" value="2">2</label><input class="inputs" name="ZgloszenieDoKasy" type="checkbox" value="3">3</label><input class="inputs" name="ZgloszenieDoKasy" type="checkbox" value="4">4</label><input class="inputs" name="ZgloszenieDoKasy" type="checkbox" value="5">5</label></td></tr>
+        <tr><th>Czy dziecko powtarzało klasę? Jeśli takto którą?</th><th colspan="2"><textarea class="inputs" name="AdresZamieszkania"></textarea></th></tr>
         <tr><th>Czy swtwierdzono u dziecka kłopoty<br> z nauką jakiegoś przedmioru?<br> Jeśli tak, prose podac jakie.</th><th colspan="2"><input class="inputs" name="AdresZameldowania" type="text"></th></tr>
         <tr><th>Czy kiedykolwiek dziecko<br> uczestniczyło w zajęciach wyrównawczych?<br> Jeśli tak, to jakich?</th><th colspan="2"><input class="inputs" name="AdresZamieszkania" type="text"></th></tr>
         <tr><th>Czy dziecko posiada orzeczenie z poradni p-p?<br> Jeśli tak, proszę podać w jakim zakresie</th><th colspan="2"><input class="inputs" name="AdresZameldowania" type="text"></th></tr>
