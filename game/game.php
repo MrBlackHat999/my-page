@@ -180,7 +180,12 @@ class dark extends character
 		public $side=1;
 		function smog()
 			{
-				$this->hp-=rand(1,3);
+				if (isset($_SESSION['enemy']))
+					{
+						echo "krakowski dym poniewiera twe płuca";
+						$_SESSION['enemy']->damage($_SESSION['player']->pwr+round($_SESSION['player']->lck*0.7))/3;
+					}
+
 			}
 	}
 class warrior extends bright
@@ -394,16 +399,52 @@ if (isset ($_SESSION['player']))
 			}
 	}
 //fireball
-
-if ($_SESSION['selector']==2&&$_SESSION['player']->lvl>4)
+if (isset ($_SESSION["selector"]))
 	{
-		echo "<input name='fireball' type='submit' value='fireball'>";
-		if (isset($_GET['fireball']))
+		if ($_SESSION['selector']==2&&$_SESSION['player']->lvl>4)
+		{
+			echo "<input name='fireball' type='submit' value='fireball'>";
+			if (isset($_GET['fireball']))
+				{
+					$_SESSION['player']->fireball();
+					header ("refresh:0; url=game.php");
+				}
+		}
+//smog
+
+		if($_SESSION['player']->side=1)
 			{
-				$_SESSION['player']->fireball();
-				header ("refresh:0; url=game.php");
+				if (!isset ($_SESSION['poisoncounter']))
+					{
+						$_SESSION['poisoncounter']=1;
+					}
+				echo "
+					<form method='get'>
+					<input name='smog' type='submit' value='smog'>";
+				if (isset ($_GET['smog']))
+					{
+						$_SESSION['smog']=$_GET['smog'];
+					}
+				if (isset ($_SESSION['smog']))
+					{
+						
+						if ($_SESSION['poisoncounter']<=3)
+							{
+								$_SESSION['player']->smog();
+								$_SESSION['poisoncounter']++;
+							}
+						if ($_SESSION['poisoncounter']==4)
+							{
+								unset ($_SESSION['smog']);
+								unset($_SESSION['poisoncounter']);
+								header ("refresh:0; url=game.php");
+							}
+						
+					}
+
 			}
 	}
+
 ?>
 </form>
 </div>

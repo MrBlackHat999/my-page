@@ -132,6 +132,7 @@ footer{
 }
 
 
+
 #spec table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -293,6 +294,11 @@ footer{
   position: absolute;
   top: 130px;
   right: 15%;
+}
+#boxX{
+  position: absolute;
+  top: 130px;
+  right: 45%;
 }
 .spacing {
 	margin-top: 40px;
