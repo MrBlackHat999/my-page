@@ -43,6 +43,42 @@ html{
     transform: translate(-50%, -50%);
     color: rgb(101, 64, 101); 
 }
+.TalkingOptionsFloat{
+    background-color: dimgray;
+    border-radius: 15px;
+    text-align: center;
+    vertical-align: middle;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    width: 800px;
+    height: 300px;
+    border: #feefae;
+    border-width: 8px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: center;
+    align-items: center;
+    animation-name: TheBox;
+    animation-duration: 10s;
+    overflow: hidden;
+    animation-fill-mode: forwards;
+    
+}
+@keyframes TheBox {
+    0%
+        {
+            top: 100%
+        }
+    100%
+        {
+            top:80%
+        }
+}
+
 .TalkingOptions{
     background-color: dimgray;
     border-radius: 15px;
@@ -62,7 +98,6 @@ html{
     align-content: stretch;
     justify-content: center;
     align-items: center;
-    
 }
 a {
     color: white;

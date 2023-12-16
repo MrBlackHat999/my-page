@@ -70,6 +70,12 @@ function talking($words, $voice)
             {
                 echo "<img id='DavieGoesUp' src='images/DaveMiller.png'/>";
                 $_SESSION['DaveSwitch']=true;
+                echo "<div class='TalkingOptionsFloat'>";
+                echo "<div class='skip'>";
+                echo "<form method='get'>";
+                echo "  <input type='submit' name='skip' value='next'>";
+                echo "</form>";
+                echo "</div>";
             }
             else
             {            
