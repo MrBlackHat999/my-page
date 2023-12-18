@@ -9,13 +9,17 @@
     <title>doggo</title>
 </head>
 <body <?php
-            if(isset($_SESSION["Background"]))
+            if(isset($_SESSION['ConeversationProgression']))
                 {
-                    echo "class='Background'";
-                }
-            if(@$_SESSION['ConeversationProgression']==7) 
-                {
-                    $_SESSION["Background"] = "true";
+                    $progress=$_SESSION['ConeversationProgression'];
+                    if ($progress>=8&&$progress<98)
+                        {
+                            echo "class='BackgroundDiningArea'";
+                        }
+                    if($progress>98&&$progress<199)
+                        {
+                            echo "class='BackgroundKitchen'";
+                        }
                 } ?> >
 <?php
 if(!isset($_SESSION["Conversation"]))
@@ -35,6 +39,11 @@ if(!isset($_SESSION["Conversation"]))
         $StevenScriptPassiveAgressive=file_get_contents("text/Steven/StevenPassiveAgressive.txt");
         $StevenScriptResonable=file_get_contents("text/Steven/StevenResonable.txt");
 
+        $RonaldoScriptDefault=file_get_contents("text/Ronaldo/RonaldoDefault.txt");
+        $RonaldoScriptInsane=file_get_contents("text/Ronaldo/RonaldoInsane.txt");
+        $RonaldoScriptPassiveAgressive=file_get_contents("text/Ronaldo/RonaldoPassiveAgressive.txt");
+        $RonaldoScriptResonable=file_get_contents("text/Ronaldo/RonaldoResonable.txt");
+
         $_SESSION['conversation'][1]['Dave']=explode(";",$ScriptDefault);
         $_SESSION['conversation'][2]['Dave']=explode(";",$ScriptInsane);
         $_SESSION['conversation'][3]['Dave']=explode(";",$ScriptPassiveAgressive);
@@ -49,6 +58,11 @@ if(!isset($_SESSION["Conversation"]))
         $_SESSION['conversation'][2]['Steven']=explode(";",$StevenScriptInsane);
         $_SESSION['conversation'][3]['Steven']=explode(";",$StevenScriptPassiveAgressive);
         $_SESSION['conversation'][4]['Steven']=explode(";",$StevenScriptResonable);
+
+        $_SESSION['conversation'][1]['Ronaldo']=explode(";",$RonaldoScriptDefault);
+        $_SESSION['conversation'][2]['Ronaldo']=explode(";",$RonaldoScriptInsane);
+        $_SESSION['conversation'][3]['Ronaldo']=explode(";",$RonaldoScriptPassiveAgressive);
+        $_SESSION['conversation'][4]['Ronaldo']=explode(";",$RonaldoScriptResonable);
     }
 
 
@@ -76,7 +90,9 @@ if (!isset($_SESSION['GameOn'])&&!isset($_SESSION['DaveSwitch']))
         {   
             if (isset ($_SESSION['ConeversationProgression']))
                 {
-                    if ($_SESSION['ConeversationProgression']>=17)
+                    $progress=$_SESSION['ConeversationProgression'];
+
+                    if ($progress>=17&&$progress<99)
                         {
                             if (!isset($_SESSION['StevenSwitch']))
                             {
@@ -86,6 +102,19 @@ if (!isset($_SESSION['GameOn'])&&!isset($_SESSION['DaveSwitch']))
                             else
                             {            
                                 echo "<img id='StevenStill' src='images/PhoneGuySteven.png'/>";
+                            }
+                        }
+
+                    if ($progress>99&&$progress<199)
+                        {
+                            if (!isset($_SESSION['RonaldoSwitch']))
+                            {
+                                echo "<img id='RonaldoGoesUp' src='images/Ronaldo.png'/>";
+                                $_SESSION['RonaldoSwitch']=true;
+                            }
+                            else
+                            {            
+                                echo "<img id='RonaldoStill' src='images/Ronaldo.png'/>";
                             }
                         }
 
@@ -106,8 +135,19 @@ if (!isset($_SESSION['GameOn'])&&!isset($_SESSION['DaveSwitch']))
                 PlayTheme(1);
             }
             else
-            {            
-                echo "<img id='DavieStill' src='images/DaveMiller.png'/>";
+            {  
+                if (isset($_SESSION['ConeversationProgression']))
+                    {
+                        if ($_SESSION['ConeversationProgression']<99)
+                            {
+                                echo "<img id='DavieStill' src='images/DaveMiller.png'/>";
+                            }
+                    }
+                else
+                    {
+                        echo "<img id='DavieStill' src='images/DaveMiller.png'/>";
+                    }
+                    
                 echo "<div class='TalkingOptions'>";
                 echo "<div class='skip'>";
                 echo "<form method='get'>";
@@ -147,28 +187,123 @@ if (!isset($_SESSION['GameOn'])&&!isset($_SESSION['DaveSwitch']))
                     }
                 $progress = $_SESSION['ConeversationProgression'];
                 $convo = $_SESSION['conversation'];
-                $dialogOption = $_SESSION['DialogOption'];
+                $DialogOption = $_SESSION['DialogOption'];
                             
-                $Dave = $convo[$dialogOption]["Dave"][$progress];
-                $Steven = $convo[$dialogOption]["Steven"][$progress];
+                $Dave = $convo[$DialogOption]["Dave"][$progress];
+                $Steven = $convo[$DialogOption]["Steven"][$progress];
+                $Ronaldo = $convo[$DialogOption]["Ronaldo"][$progress];
+
                 //echo $progress;
+
                 if (!ctype_space($Dave))
                     {
-                        talking($Dave,$dialogOption.",".$progress,"DaveLines");
+                        talking($Dave,$DialogOption.",".$progress,"DaveLines");
                     }
                 if (!ctype_space($Steven))
                     {
-                        talking($Steven,$dialogOption.",".$progress,"StevenLines");
+                        talking($Steven,$DialogOption.",".$progress,"StevenLines");
                     }
+                if (!ctype_space($Ronaldo))
+                    {
+                        talking($Ronaldo,$DialogOption.",".$progress,"RonaldoLines");
+                    }
+
+
+                        // Choose Location From Dining Area
+                if($progress==35)
+                    {
+                        if ($DialogOption==1)
+                            {
+                                if (isset($_SESSION['RonaldoMet']))
+                                    {
+                                        $_SESSION['ConeversationProgression']=104;
+                                    }
+                                else
+                                    {
+                                        $_SESSION['ConeversationProgression']=99;
+                                    }
+                                        
+                            }
+                        if ($DialogOption==2)
+                            {
+                                $_SESSION['ConeversationProgression']=199;
+                            }
+                        if ($DialogOption==3)
+                            {
+                                $_SESSION['ConeversationProgression']=299;
+                            }
+                        if ($DialogOption==4)
+                            {
+                                $_SESSION['ConeversationProgression']=399;
+                            } 
+                        }
+
+                // Event Markers   
+
+                // Ronaldo's Kitchen
+                if($progress>99&&$progress<200)
+                    {
+                        // Ronaldo Goes Straight To Cooking
+                        if($progress==104)
+                        {
+                            if($DialogOption==3)
+                            {
+                                $_SESSION['ConeversationProgression']=110; 
+                            }
+                        }
+
+                        // Discuss Ronaldo Options
+                        if($progress==108)
+                            {
+                                // Cooking Begins
+                                if ($DialogOption==1)
+                                    {
+                                        $_SESSION['ConeversationProgression']=110;                       
+                                    }
+
+                                // Stare at Ronaldo
+                                if ($DialogOption==2)
+                                    {
+                                        $_SESSION['ConeversationProgression']=106;
+                                    }
+
+                                // Stealing Pots and Pans
+                                if ($DialogOption==3)
+                                    {
+                                        $_SESSION['ConeversationProgression']=106;
+                                    }
+                                    
+                                // Go back to dining Area
+                                if ($DialogOption==4)
+                                    {
+                                        $_SESSION['ConeversationProgression']=34;
+                                    }  
+                                }
+
+                        // Ronaldo Remebers You
+                        if ($progress==104)
+                            {
+                                $_SESSION['RonaldoMet']=true;
+                            }
+                    }
+                
+
                 echo "</div>";
 
-                
             }
 
         }
 
-
-
+        // Debug
+        /*
+        echo "<form method='get'>";
+        echo "  <input type='submit' name='GoTo100' value='GoTo100'>";
+        echo "</form>";
+        if (isset($_GET['GoTo100']))
+            {
+                $_SESSION['ConeversationProgression']=100;
+            }
+        */
 
 ?>
 </div>

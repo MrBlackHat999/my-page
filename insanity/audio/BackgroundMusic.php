@@ -13,9 +13,12 @@ function PlayTheme($Theme)
                 echo "<audio controls autoplay hidden='hidden'><source src='audio/Themes/whoosh.mp3' type='audio/mpeg'></audio>";
                 break;
 
-                case $Theme>10:
+                case $Theme<=100:
                 echo "<audio controls autoplay loop hidden='hidden'><source src='audio/Themes/RestaurantBlueprint.mp3' type='audio/mpeg'></audio>";
                 break;
+
+                case $Theme<=200;
+                echo "<audio controls autoplay loop hidden='hidden'><source src='audio/Themes/KitchenTheme.mp3' type='audio/mpeg'></audio>";
 
             }
     }
