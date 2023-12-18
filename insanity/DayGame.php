@@ -1,4 +1,5 @@
 <?php session_start();?>
+<?php require "audio/BackgroundMusic.php"?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,6 +30,11 @@ if(!isset($_SESSION["Conversation"]))
         $JackScriptPassiveAgressive=file_get_contents("text/Jack/JackPassiveAgressive.txt");
         $JackScriptResonable=file_get_contents("text/Jack/JackResonable.txt");
 
+        $StevenScriptDefault=file_get_contents("text/Steven/StevenDefault.txt");
+        $StevenScriptInsane=file_get_contents("text/Steven/StevenInsane.txt");
+        $StevenScriptPassiveAgressive=file_get_contents("text/Steven/StevenPassiveAgressive.txt");
+        $StevenScriptResonable=file_get_contents("text/Steven/StevenResonable.txt");
+
         $_SESSION['conversation'][1]['Dave']=explode(";",$ScriptDefault);
         $_SESSION['conversation'][2]['Dave']=explode(";",$ScriptInsane);
         $_SESSION['conversation'][3]['Dave']=explode(";",$ScriptPassiveAgressive);
@@ -38,33 +44,54 @@ if(!isset($_SESSION["Conversation"]))
         $_SESSION['conversation'][2]['Jack']=explode(";",$JackScriptInsane);
         $_SESSION['conversation'][3]['Jack']=explode(";",$JackScriptPassiveAgressive);
         $_SESSION['conversation'][4]['Jack']=explode(";",$JackScriptResonable);
+
+        $_SESSION['conversation'][1]['Steven']=explode(";",$StevenScriptDefault);
+        $_SESSION['conversation'][2]['Steven']=explode(";",$StevenScriptInsane);
+        $_SESSION['conversation'][3]['Steven']=explode(";",$StevenScriptPassiveAgressive);
+        $_SESSION['conversation'][4]['Steven']=explode(";",$StevenScriptResonable);
     }
 
 
-function talking($words, $voice)
+function talking($words, $voice,$who)
     {
-        echo "<audio controls autoplay hidden='hidden'>  <source src='audio/DaveLines/$voice.mp3' type='audio/mpeg'>  </audio>";
+        echo "<audio controls autoplay hidden='hidden'>  <source src='audio/$who/$voice.mp3' type='audio/mpeg'>  </audio>";
         echo "<div id='talking'>";
         echo $words;
         echo "</div>";
     }
-    if (!isset($_SESSION['GameOn'])&&!isset($_SESSION['DaveSwitch']))
-        {
-            echo "<form method='get'>";
-            echo "<input type='submit' name='GameOn' value='Begin the suffering'>";
-            echo "</form>";
-            if (isset($_GET['GameOn']))
-                {
+
+if (!isset($_SESSION['GameOn'])&&!isset($_SESSION['DaveSwitch']))
+     {
+        echo "<form method='get'>";
+        echo "<input type='submit' name='GameOn' value='Begin the suffering'>";
+        echo "</form>";
+        if (isset($_GET['GameOn']))
+            {
                     $_SESSION['GameOn']=$_GET['GameOn'];
                     header ("refresh:0; url=DayGame.php");
-                }
+            }
 
         }
     else 
-        {
-            echo "<audio controls autoplay loop hidden='hidden'>";
-            echo "<source src='audio/Davie_Davie.mp3' type='audio/mpeg'>";
-            echo "</audio>";
+        {   
+            if (isset ($_SESSION['ConeversationProgression']))
+                {
+                    if ($_SESSION['ConeversationProgression']>=17)
+                        {
+                            if (!isset($_SESSION['StevenSwitch']))
+                            {
+                                echo "<img id='StevenGoesUp' src='images/PhoneGuySteven.png'/>";
+                                $_SESSION['StevenSwitch']=true;
+                            }
+                            else
+                            {            
+                                echo "<img id='StevenStill' src='images/PhoneGuySteven.png'/>";
+                            }
+                        }
+
+                }
+
+            
 
            if (!isset($_SESSION['DaveSwitch']))
             {
@@ -76,6 +103,7 @@ function talking($words, $voice)
                 echo "  <input type='submit' name='skip' value='next'>";
                 echo "</form>";
                 echo "</div>";
+                PlayTheme(1);
             }
             else
             {            
@@ -94,6 +122,12 @@ function talking($words, $voice)
                     {
                         $_SESSION['ConeversationProgression']++;
                     }
+
+                if (isset($_SESSION["ConeversationProgression"]))
+                    {
+                        PlayTheme($_SESSION['ConeversationProgression']+1);
+                    }
+
                 if (isset($_GET["skip"]))
                         {
                             $_SESSION['DialogOption']= 1;
@@ -101,11 +135,12 @@ function talking($words, $voice)
 
                 for ($i = 1; $i <= 4; $i++)
                 {
-                    if ($_SESSION['conversation'][$i]['Jack'][$_SESSION['ConeversationProgression']]!="")
+                    if (!ctype_space($_SESSION['conversation'][$i]['Jack'][$_SESSION['ConeversationProgression']]))
                         {
                             echo "<a href='DayGame.php?DialogOption=$i'>".$_SESSION['conversation'][$i]['Jack'][$_SESSION['ConeversationProgression']]."</a><br>";
                         }
                 }
+
                 if (isset($_GET['DialogOption']))
                     {
                         $_SESSION['DialogOption']=$_GET['DialogOption'];
@@ -114,13 +149,26 @@ function talking($words, $voice)
                 $convo = $_SESSION['conversation'];
                 $dialogOption = $_SESSION['DialogOption'];
                             
+                $Dave = $convo[$dialogOption]["Dave"][$progress];
+                $Steven = $convo[$dialogOption]["Steven"][$progress];
                 //echo $progress;
-                talking($convo[$dialogOption]["Dave"][$progress],$dialogOption.",".$progress);
+                if (!ctype_space($Dave))
+                    {
+                        talking($Dave,$dialogOption.",".$progress,"DaveLines");
+                    }
+                if (!ctype_space($Steven))
+                    {
+                        talking($Steven,$dialogOption.",".$progress,"StevenLines");
+                    }
+                echo "</div>";
+
                 
             }
 
-
         }
+
+
+
 
 ?>
 </div>

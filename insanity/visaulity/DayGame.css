@@ -5,6 +5,7 @@ html{
     font-size: 27px;
     font-weight: 120;
 }
+/* DAVIE */
 #DavieGoesUp{
     position: absolute;
     left: 50%;
@@ -31,6 +32,34 @@ html{
     transform: translate(-50%, -50%); 
 }
 
+/* STEVEN */
+
+#StevenGoesUp{
+    position: absolute;
+    top:50%;
+    transform: translate(-50%, -50%);
+    animation-name: PhonySteven;
+    animation-duration: 10s;
+    overflow: hidden;
+    animation-fill-mode: forwards;
+}
+@keyframes PhonySteven {
+    0%
+        {
+            left: 100%;
+        }
+    100%
+        {
+            left: 65%;
+        }
+}
+#StevenStill{
+    position: absolute;
+    top: 50%;
+    left: 65%;
+    transform: translate(-50%, -50%); 
+}
+
 .Background{
     background: url(../images/PizzeriaBackground.jpg) no-repeat center center fixed;
     background-size: cover;
@@ -44,7 +73,7 @@ html{
     color: rgb(101, 64, 101); 
 }
 .TalkingOptionsFloat{
-    background-color: dimgray;
+    background-color: #333;
     border-radius: 15px;
     text-align: center;
     vertical-align: middle;
@@ -54,8 +83,6 @@ html{
     transform: translate(-50%, -50%); 
     width: 800px;
     height: 300px;
-    border: #feefae;
-    border-width: 8px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -80,7 +107,7 @@ html{
 }
 
 .TalkingOptions{
-    background-color: dimgray;
+    background-color: #333;
     border-radius: 15px;
     text-align: center;
     vertical-align: middle;
@@ -104,18 +131,26 @@ a {
     text-decoration: none;
 }
 a:hover {
-    background-color: #feefae;
-    color: dimgray;
+    background-color: #009292;
+    color: white;
     border-radius: 3px;
     padding: auto;
 }
 .giveup{
     position: absolute;
-    left: 35%;
+    left: 95%;
 }
-.skip{
+.skip.skip{
+    background-color: #feefae;
+    color: rgb(105, 105, 105);
+    padding: 14px 28px;
+    border-radius: 15px;
     position: absolute;
-    font-weight: 200;
     right: 10%;
     top: 10%;
+}
+
+#UDeadLol{
+    background: url(../images/2019-08-05_29.png) no-repeat center center fixed;
+    background-size: cover;
 }
